@@ -2,11 +2,10 @@ import React from "react";
 import { useRef, useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
 import axios from "../../api/Axios";
-import {Link,useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 const LOGIN_URL = "/auth";
 
 const Login = () => {
-  
   const { setAuth } = useAuth();
   const userRef = useRef();
   const errRef = useRef();
@@ -63,44 +62,54 @@ const Login = () => {
 
   return (
     <>
-      <section>
-        <p
+      <div className="flex flex-col w-full h-full justify-center items-center py-4 gap-2">
+        {/*<p
           ref={errRef}
           className={errMsg ? "errmsg" : "offscreen"}
           aria-live="assertive"
         >
           {errMsg}
-        </p>
-        <h1>Sign In</h1>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="Email">Email:</label>
+  </p>*/}
+        <div className="flex justify-center items-center h-[10%] ">
+          <h1 className="font-semibold md:font-bold text-4xl ">Login</h1>
+        </div>
+        <form
+          onSubmit={handleSubmit}
+          className="flex items-center justify-center flex-col w-full h-[50%] gap-8"
+        >
           <input
             type="text"
             id="email"
+            placeholder="Enter email"
             ref={userRef}
             autoComplete="off"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             required
+            className="flex rounded-3xl h-[20%] w-[50%] text-start px-4 border-2"
           />
 
-          <label htmlFor="password">Password:</label>
           <input
             type="password"
             id="password"
+            placeholder="Enter password"
             onChange={(e) => setPwd(e.target.value)}
             value={pwd}
             required
+            className="flex rounded-3xl h-[20%] w-[50%] text-start px-4 border-2"
           />
-          <button>Sign In</button>
+
+          <button className="flex text-xl font-medium bg-black text-white py-2 px-8 rounded-3xl items-center justify-center">
+            Sign In
+          </button>
         </form>
-        <p>
-                Need an Account?<br />
-                <span className="line">
-                    <Link to="/register">Sign Up</Link>
-                </span>
-            </p>
-      </section>
+        <p className="font-normal px-2 text-sm">
+          Need an Account?
+         
+            <Link to="/register" className="text-blue-600 text-base">Register</Link>
+          
+        </p>
+      </div>
     </>
   );
 };

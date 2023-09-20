@@ -65,62 +65,58 @@ const Register = () => {
                     </p>
                 </section>
             ) : (
-                <section>
-                    <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1>Register</h1>
-                    <form onSubmit={handleSubmit}>
-                        <label htmlFor="username">
-                            Username:
-                            
-                        </label>
+                <div className='flex flex-col w-full h-full justify-center items-center gap-4'>
+                    {/*<p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>*/}
+                    
+                    <div className="flex justify-center items-center h-[10%] ">
+          <h1 className="font-semibold md:font-bold text-4xl ">Register</h1>
+        </div>
+                    <form onSubmit={handleSubmit}
+                    className="flex items-center justify-center flex-col w-full h-[50%] gap-8"
+                    >
+                      
                         <input
                             type="text"
                             id="username"
+                            placeholder='Enter username'
                             ref={userRef}
                             autoComplete="off"
                             onChange={(e) => setUser(e.target.value)}
                             value={user}
                             required
-                            
+                            className="flex rounded-3xl h-[20%] w-[50%] text-start px-4 border-2"
                         />
-                        
-                        <label htmlFor="email">
-                            Email:
-                            
-                        </label>
+                       
                         <input
                             type="email"
                             id="email"
+                            placeholder='Enter email'
                             onChange={(e) => setEmail(e.target.value)}
                             value={email}
                             required
-                            
+                            className="flex rounded-3xl h-[20%] w-[50%] text-start px-4 border-2"
                         />
 
 
-                        <label htmlFor="password">
-                            Password:
-                            
-                        </label>
                         <input
                             type="password"
                             id="password"
+                            placeholder='Enter password'
                             onChange={(e) => setPwd(e.target.value)}
                             value={pwd}
                             required
-                            
+                            className="flex rounded-3xl h-[20%] w-[50%] text-start px-4 border-2"
                         />
                     
-                    <button >Sign Up</button>
+                    <button className="flex text-xl font-medium bg-black text-white py-2 px-8 rounded-3xl items-center justify-center">Register</button>
                     </form>
-                    <p>
-                        Already registered?<br />
-                        <span className="line">
-                             {/*put router link here*/}
-                             <Link to="/">Login</Link>
-                        </span>
+                    <p className="font-normal px-2 text-sm">
+                        Already registered?
+                        
+                    <Link to="/login" className="text-blue-600 text-base">Login</Link>
+                        
                     </p>
-                </section>
+                    </div>
             
             
             )}
