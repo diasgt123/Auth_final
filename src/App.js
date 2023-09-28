@@ -7,6 +7,7 @@ import Missing from "./components/Missing";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
+import QR from "./components/QR/QRCodeScanner";
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
 
       {/* we want to protect these routes */}
       <Route element={<RequireAuth />}>
-        <Route path="/Qr" element={<Qr />} />
+        {/* <Route path="/Qr" element={<Qr />} /> */}
+        <Route path="QR" element={<QR />} />
+
       </Route>
       {/* catch all */}
       <Route path="*" element={<Missing />} />

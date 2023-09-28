@@ -8,9 +8,9 @@ const Qr = () => {
       Qr code scan page
       <br />
       User details
-      <br />
+      {/* <br />
       <Users />
-      <br />
+      <br /> */}
       <br />
       <button onClick={<Logout />}>Logout</button>
     </div>

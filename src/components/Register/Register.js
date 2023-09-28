@@ -67,7 +67,6 @@ const Register = () => {
             ) : (
                 <div className='flex flex-col w-full h-full justify-center items-center gap-4'>
                     {/*<p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>*/}
-                    
                     <div className="flex justify-center items-center h-[10%] ">
           <h1 className="font-semibold md:font-bold text-4xl ">Register</h1>
         </div>
@@ -108,12 +107,12 @@ const Register = () => {
                             className="flex rounded-3xl h-[20%] w-[50%] text-start px-4 border-2"
                         />
                     
-                    <button className="flex text-xl font-medium bg-black text-white py-2 px-8 rounded-3xl items-center justify-center">Register</button>
+                    <button className="flex text-xl font-medium bg-black text-white py-2 px-8 rounded-3xl items-center justify-center hover:bg-[#27272a]">Register</button>
                     </form>
                     <p className="font-normal px-2 text-sm">
                         Already registered?
                         
-                    <Link to="/login" className="text-blue-600 text-base">Login</Link>
+                    <Link to="/login" className="text-blue-600 text-base"> Login</Link>
                         
                     </p>
                     </div>

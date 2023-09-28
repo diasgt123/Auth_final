@@ -62,6 +62,7 @@ const Login = () => {
 
   return (
     <>
+      
       <div className="flex flex-col w-full h-full justify-center items-center py-4 gap-2">
         {/*<p
           ref={errRef}
@@ -99,14 +100,14 @@ const Login = () => {
             className="flex rounded-3xl h-[20%] w-[50%] text-start px-4 border-2"
           />
 
-          <button className="flex text-xl font-medium bg-black text-white py-2 px-8 rounded-3xl items-center justify-center">
+          <button className="flex text-xl font-medium bg-black text-white py-2 px-8 rounded-3xl items-center justify-center hover:bg-[#27272a]">
             Sign In
           </button>
         </form>
         <p className="font-normal px-2 text-sm">
-          Need an Account?
+          Need an Account? 
          
-            <Link to="/register" className="text-blue-600 text-base">Register</Link>
+            <Link to="/register" className="text-blue-600 text-base "> Register</Link>
           
         </p>
       </div>
